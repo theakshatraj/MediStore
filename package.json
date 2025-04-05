@@ -1,0 +1,20 @@
+{
+  "name": "medi-cart-project",
+  "version": "1.0.0",
+  "description": "MediCart project running Angular and Node backend together",
+  "scripts": {
+    "start": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "cd MediCart-backend && npm install && npm start",
+    "client": "cd MediCart-frontend && npm install && ng serve"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.3",
+    "cors": "^2.8.5",
+    "express": "^4.21.0",
+    "mongoose": "^8.7.0"
+  },
+  "devDependencies": {
+    "concurrently": "^9.0.1"
+  }
+}

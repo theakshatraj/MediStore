@@ -1,0 +1,21 @@
+<div class="container mt-4">
+    <h2>Order History</h2>
+  
+    <div *ngIf="orders.length === 0">
+      <p>No orders placed yet.</p>
+    </div>
+  
+    <div *ngIf="orders.length > 0">
+      <div class="order" *ngFor="let order of orders">
+        <h5>Order Date: {{ order.date | date: 'medium' }}</h5>
+        <ul>
+          <li *ngFor="let product of order.products">
+            {{ product.name }} - Quantity: {{ product.quantity }} - $
+            {{ product.price }}
+          </li>
+        </ul>
+        <hr />
+      </div>
+    </div>
+  </div>
+  

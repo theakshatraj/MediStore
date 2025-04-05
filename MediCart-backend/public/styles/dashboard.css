@@ -1,0 +1,43 @@
+body {
+    background-color: #f8f9fa; 
+}
+
+.navbar {
+    background-color: #007bff; 
+}
+
+.nav-link {
+    font-weight: bold;
+    transition: color 0.3s; 
+}
+
+.nav-link:hover {
+    color: #ffd700; 
+}
+
+.card {
+    transition: transform 0.2s, box-shadow 0.3s; 
+}
+
+.card:hover {
+    transform: scale(1.05); 
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); 
+}
+
+.card-title {
+    font-size: 1.25rem;
+    color: #007bff;
+}
+
+.card-text {
+    color: #495057; 
+}
+
+input[type="text"] {
+    border-radius: 5px; 
+}
+
+h2 {
+    color: #343a40; 
+    font-weight: 600; 
+}

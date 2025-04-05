@@ -1,0 +1,111 @@
+<div class="signup-container">
+  <div class="signup-card">
+    <h2>Sign Up for MediStore</h2>
+    <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+      <!-- Name Field -->
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input
+          id="name"
+          formControlName="name"
+          type="text"
+          placeholder="Enter your name"
+          class="form-control"
+        />
+        <div *ngIf="signupForm.get('name')?.invalid && signupForm.get('name')?.touched" class="error">
+          <small *ngIf="signupForm.get('name')?.errors?.['required']">Name is required.</small>
+        </div>
+      </div>
+
+      <!-- Email Field -->
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input
+          id="email"
+          formControlName="email"
+          type="email"
+          placeholder="Enter your email"
+          class="form-control"
+        />
+        <div *ngIf="signupForm.get('email')?.invalid && signupForm.get('email')?.touched" class="error">
+          <small *ngIf="signupForm.get('email')?.errors?.['required']">Email is required.</small>
+          <small *ngIf="signupForm.get('email')?.errors?.['email']">Invalid email format.</small>
+        </div>
+      </div>
+
+      <!-- Phone Field -->
+      <div class="form-group">
+        <label for="phone">Phone:</label>
+        <input
+          id="phone"
+          formControlName="phone"
+          type="text"
+          placeholder="Enter your phone number"
+          class="form-control"
+        />
+        <div *ngIf="signupForm.get('phone')?.invalid && signupForm.get('phone')?.touched" class="error">
+          <small *ngIf="signupForm.get('phone')?.errors?.['required']">Phone number is required.</small>
+        </div>
+      </div>
+
+      <!-- Address Field -->
+      <div class="form-group">
+        <label for="address">Address:</label>
+        <input
+          id="address"
+          formControlName="address"
+          type="text"
+          placeholder="Enter your address"
+          class="form-control"
+        />
+        <div *ngIf="signupForm.get('address')?.invalid && signupForm.get('address')?.touched" class="error">
+          <small *ngIf="signupForm.get('address')?.errors?.['required']">Address is required.</small>
+        </div>
+      </div>
+
+      <!-- Credit Card Field -->
+      <div class="form-group">
+        <label for="creditCard">Credit Card:</label>
+        <input
+          id="creditCard"
+          formControlName="creditCard"
+          type="text"
+          placeholder="Enter your credit card number"
+          class="form-control"
+        />
+        <div *ngIf="signupForm.get('creditCard')?.invalid && signupForm.get('creditCard')?.touched" class="error">
+          <small *ngIf="signupForm.get('creditCard')?.errors?.['required']">Credit Card is required.</small>
+          <small *ngIf="signupForm.get('creditCard')?.errors?.['minlength']">Credit Card must be 16 digits.</small>
+          <small *ngIf="signupForm.get('creditCard')?.errors?.['maxlength']">Credit Card must be 16 digits.</small>
+        </div>
+      </div>
+
+      <!-- Password Field -->
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input
+          id="password"
+          formControlName="password"
+          type="password"
+          placeholder="Enter your password"
+          class="form-control"
+        />
+        <div *ngIf="signupForm.get('password')?.invalid && signupForm.get('password')?.touched" class="error">
+          <small *ngIf="signupForm.get('password')?.errors?.['required']">Password is required.</small>
+          <small *ngIf="signupForm.get('password')?.errors?.['minlength']">Password must be at least 6 characters long.</small>
+        </div>
+      </div>
+
+      <!-- Submit Button -->
+      <button type="submit" [disabled]="signupForm.invalid || isLoading" class="btn btn-primary">
+        {{ isLoading ? 'Signing Up...' : 'Sign Up' }}
+      </button>
+
+      <!-- Error Message -->
+      <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+
+      <!-- Redirect to Login -->
+      <p class="redirect-message">Already have an account? <a routerLink="/login">Login here</a></p>
+    </form>
+  </div>
+</div>

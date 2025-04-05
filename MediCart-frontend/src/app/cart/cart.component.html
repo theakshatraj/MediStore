@@ -1,0 +1,23 @@
+<div class="cart-container" *ngIf="cartItems.length > 0">
+  <h2>Your Cart</h2>
+  <ul class="cart-list">
+    <li *ngFor="let item of cartItems" class="cart-item">
+      <div class="item-details">
+        <span class="item-name">{{ item.name }}</span>
+        <span class="item-price">{{ item.price | currency }}</span>
+      </div>
+      <div class="item-actions">
+        <button class="btn btn-danger btn-sm" (click)="removeItem(item)">Remove</button>
+      </div>
+    </li>
+  </ul>
+
+  <div class="cart-summary">
+    <h3>Total: {{ getTotal() | currency }}</h3>
+    <button class="btn btn-success" (click)="checkout('test-user-id')">Checkout</button>
+  </div>
+</div>
+
+<div class="empty-cart" *ngIf="cartItems.length === 0">
+  <p>Your cart is empty.</p>
+</div>

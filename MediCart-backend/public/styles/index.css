@@ -1,0 +1,16 @@
+body {
+    background-color: #f8f9fa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    text-align: center;
+}
+
+.btn-primary, .btn-secondary {
+    width: 200px;
+    margin: 15px;
+}

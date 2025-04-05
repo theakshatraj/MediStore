@@ -1,0 +1,50 @@
+<div class="dashboard-container">
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="navbar-brand">MediCart</div>
+    <div class="navbar-menu">
+      <a routerLink="/profile">Profile</a>
+      <a routerLink="/cart">Cart</a>
+      <a routerLink="/order-history">Order History</a>
+      <a routerLink="/login" (click)="logout()">Logout</a>
+    </div>
+  </nav>
+
+  <!-- Search Bar -->
+  <div class="search-bar">
+    <input
+      type="text"
+      placeholder="Search for medicines..."
+      [(ngModel)]="searchQuery"
+      (input)="onSearch()"
+    />
+  </div>
+
+  <!-- Products Display -->
+  <div class="products-list">
+    <h3>Available Products</h3>
+    <div class="product-grid">
+      <div *ngFor="let product of products" class="product-card">
+        <img [src]="product.image || 'assets/default-product.png'" alt="{{ product.name }}" class="product-image" />
+        <h4>{{ product.name }}</h4>
+        <p>{{ product.description }}</p>
+        <p class="price">Price: {{ product.price | currency }}</p>
+        <p class="stock" *ngIf="product.stock > 0">Stock: {{ product.stock }}</p>
+        <p class="out-of-stock" *ngIf="product.stock === 0">Out of Stock</p>
+        
+        <!-- Add to Cart Button -->
+        <button 
+          (click)="addToCart(product)" 
+          [disabled]="product.stock === 0" 
+          class="btn-add-to-cart">
+          Add to Cart
+        </button>
+        
+        <!-- Optional Success Message After Adding to Cart -->
+        <div *ngIf="product.addedToCart" class="success-message">
+          Added to Cart!
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

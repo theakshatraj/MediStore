@@ -1,0 +1,51 @@
+.landing-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('../pics/landing-bg.jpg.crdownload'); /* Optional background image */
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+  }
+  
+  .landing-content {
+    background-color: rgba(0, 0, 0, 0.6); /* Dark overlay */
+    padding: 40px;
+    border-radius: 15px;
+    max-width: 600px;
+  }
+  
+  h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    color: #fff;
+  }
+  
+  p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+    color: #ddd;
+  }
+  
+  .landing-buttons {
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .btn-landing {
+    padding: 12px 30px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2em;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-landing:hover {
+    background-color: #0056b3;
+  }
+  
