@@ -1,7 +1,5 @@
 # MediStore
 
-Here's a concise and compelling GitHub repository description for your e-commerce web application project:
-
 ---
 
 # Drugstore E-commerce Web Application
